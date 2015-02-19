@@ -49,7 +49,7 @@ Downloaded file using download.file(method, "curl")
 
 Unzipped the zip file from "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 
-Read in all files from the data set using read.table. The subject_test.txt, y_test.txt, subject_train.txt and y_train.txt files were read in using colClasses="factor"
+Read in all files from the data set using read.table. The y_test.txt and y_train.txt files were read in using colClasses="factor"
 
 Created column names for all data sets. The 561 values from features.txt was used to name the test.set and train.set data sets (X_test.txt and X_train.txt) The column for the test.labels and train.labels data sets (y_test and y_train) was named "activity". The column for the test.subject and train subject data sets (subject_test.txt and subject_train.txt) was named "subject". 
 
@@ -61,10 +61,10 @@ Named the activities in the data set using list(walking="1", walkingupstairs="2"
 
 Removed all the "-" and "()" out of the column names.
 
-Converted all feature columns to values in a measurement column using gather(). Did this to, frankly, make it easier to calculate the average of the measurements. This makes the tidy data set long instead of wide (which is allowed according to the project assignment. 
+Converted all feature columns to values in a measurement column using gather(). Did this to, frankly, make it easier to calculate the average of the measurements. This makes the tidy data set long instead of wide (which is allowed according to the project assignment.) 
 
 Mashed the subject, activity and measurement column together to make it possible to calculate the average of the measurement value. Used mutate(), group_by(), summarize(), and separate(). 
 
-Changed the subject variable class to numeric to and arranged the tidy data set by subject. 
+Changed the name of the mean value column to "average". 
 
 Used write.table(tidy, file="tidy.txt", row.names=FALSE) to create the tidy data set file. 
