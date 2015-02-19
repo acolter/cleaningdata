@@ -5,14 +5,14 @@ run_analysis <- function() {
   library(tidyr)
   
   # Read in all files from the dataset
-  features <- read.table("features.txt")  
-  activity.labels <- read.table("activity_labels.txt")  
-  test.subjects <- read.table("test/subject_test.txt", colClasses="factor") #int?    
-  test.labels <- read.table("test/y_test.txt", colClasses="factor") 
-  test.set <- read.table("test/X_test.txt")    
-  train.subjects <- read.table("train/subject_train.txt", colClasses="factor") #int? 
-  train.labels <- read.table("train/y_train.txt", colClasses="factor")  
-  train.set <- read.table("train/X_train.txt")     
+  features <- read.table("UCI HAR Dataset/features.txt")  
+  activity.labels <- read.table("UCI HAR Dataset/activity_labels.txt")  
+  test.subjects <- read.table("UCI HAR Dataset/test/subject_test.txt", colClasses="factor") #int?    
+  test.labels <- read.table("UCI HAR Dataset/test/y_test.txt", colClasses="factor") 
+  test.set <- read.table("UCI HAR Dataset/test/X_test.txt")    
+  train.subjects <- read.table("UCI HAR Dataset/train/subject_train.txt", colClasses="factor") #int? 
+  train.labels <- read.table("UCI HAR Dataset/train/y_train.txt", colClasses="factor")  
+  train.set <- read.table("UCI HAR Dataset/train/X_train.txt")     
   
   ## Create column names for all datasets
   feature.labels <- features[[2]]
@@ -81,6 +81,7 @@ run_analysis <- function() {
     
   ## Create a second, independent tidy data set with the average 
   ## of each variable for each activity and each subject
+  ## Converts all feature columns to values in a measure column
   tidydf <- gather(df, measure, value, -(id:activity))
   
   ##Look up summarize_each and aggregate
@@ -96,9 +97,10 @@ run_analysis <- function() {
  
   write.table(tidy, file="tidy.txt", row.names=FALSE)
   
+  #tidydf <- gather(df, measure, value, -(id:activity))
   #by_measure <- tidydf %>% 
-   # group_by(measure) %>%
-   # summarise_each(funs(mean))
+    #group_by(measure) %>%
+    #summarise_each(funs(mean))
   
   # Vector of values in measure column  
   #measure_vec <- unique(tidydf$measure)
