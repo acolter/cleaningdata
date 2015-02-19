@@ -1,11 +1,11 @@
-Describe the variables, the data, and any transformations or work that you performed to clean up the data.
+# Code Book
+Describe the variables, the data, and any transformations or work performed to clean up the data.
 
-## Created "project" folder
-if(!file.exists("project")) {
-+ dir.create("project")
-+ }
+## Variables
 
-## Downloaded zip file into the project folder
+## Data
+
+## Worked performed to clean the data
 fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileURL, destfile = "./project/smartphone.zip", method = "curl")
 
