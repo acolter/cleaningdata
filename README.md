@@ -43,10 +43,9 @@ The script performs the following operations:
 3. Uses descriptive activity names to name the activities in the data set.
 	* Uses the list function to map the numeric activity values to descriptive names like "sitting" and "standing."
 4. Appropriately labels the data set with descriptive variable names.
-	* Uses sub and gsub to do a find and replace on the column names. The resulting descriptive names are included in CodeBook.md.
+	* Uses sub and gsub to do a find and replace on the column names, getting rid of the non-alpha characters and changing it to lowercase. 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-	* Uses gather to convert each feature to a measure variable and value.
-	* Uses mutate and group_by to create a single value for each subject-activity-measure.
+	* Uses gather to convert each feature to a measurement variable and value.
+	* Uses mutate and group_by to create a single value for each subject-activity-measurement.
 	* Uses summarize to calculate the mean of each value.
-	* Arranges the tidy data set by subject.
 
