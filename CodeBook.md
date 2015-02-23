@@ -17,8 +17,7 @@ The files in the original data set included the following:
   * test/subject_test.txt -- Each row identifies the subject (2, 4, 9, 10, 12, 13, 18, 20, 24) who performed the activity for each window sample.
   * test/y_test.txt -- The 2,947 class labels for the Test data set.
   * test/X_test.txt -- The 2,947 measurement values for the Test data set.
-  * train/subject_train.txt -- Each row identifies the subject (1, 11, 14:17, 19, 21:23, 25, 26)
-[13] "27" "28" "29" "3"  "30" "5"  "6"  "7"  "8") who performed the activity for each window sample.   
+  * train/subject_train.txt -- Each row identifies the subject (1, 3, 5:8, 11, 14:17, 19, 21:23, 25:30) who performed the activity for each window sample.   
   * train/y_train.txt -- The 7,352 class labels for the Train data set.
   * train/X_train.txt -- The 7,352 measurement values for the Train data set.
 
